@@ -1,0 +1,172 @@
+﻿@using System
+@using System.Linq
+@using MLReporting.Models
+@model UsageViewModel
+
+@{
+    ViewBag.Title = "Report";
+}
+
+<style>
+    .totalColour {
+        background-color: rgb(255, 255, 203);
+        font-weight: bolder;
+    }
+     #report tbody td:nth-child(n+4) {
+        text-align: right;
+    }
+</style>
+
+@{
+    int i = 0;
+
+    int yearKey = DateTime.Now.Year;
+    int monthKey = DateTime.Now.Month;
+
+    int dateKey = ((DateTime.Now.Year * 100 + DateTime.Now.Month)) * 100 + 1;
+}
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-6 form-group">
+                    <select class="form-control" id="user">
+                        @foreach (var tenant in Model.Users)
+                        {
+                            <option value="@tenant.UserRoleDimKey">@tenant.DisplayName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-3 form-group">
+                    <select name="month" class="form-control" id="year" onchange="" size="1">
+                        @while (i < 4)
+                        {
+                            var year = yearKey - i;
+
+                            <option value="@year">@year</option>
+                            i++;
+                        }
+                    </select>
+                </div>
+                <div class="col-xs-3">
+                    <select name="month" class="form-control" id="month" size="1">
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                <div id="loading" class="col-xs-1">
+                    <img src="~/Images/ajax-loader.gif" height="16" width="16" alt="loading.." />
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="pull-right" style="width: 200px;">
+                <span>CPU Rate: 0.201612903</span>
+                <br />
+                <span>Disk Rate: 0.003360215</span>
+                <br />
+                <span>Memory Rate: 0.161290323</span>
+                <br />
+                <span><b>Last Modified: </b><span id="dateLastModified"></span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="report">
+
+</div>
+
+<div class="pull-left">
+    <input type="button" class="btn btn-primary pull-left" value="Export" id="export" />
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $('#user').val(@Model.User.UserRoleDimKey);
+
+        //set the select to today's date
+        var month = "0" + (new Date().getMonth() + 1);
+        $('#month').val(month);
+
+        var GetDateLastModified = function () {
+            $.ajax({
+                url: '@Url.Action("GetDateLastModified", "Tenant")',
+                type: 'GET',
+                data: { id: $('#user').val() },
+                success: function (data) {
+                    $('#dateLastModified').html(data);
+                },
+            });
+        }
+
+        var LoadReport = function (id, fromDate, toDate) {
+            $('#loading').show();
+            $.ajax({
+                url: '@Url.Action("Report", "Tenant")',
+                type: 'GET',
+                data: {
+                    id: id,
+                    fromDate: fromDate,
+                    toDate: toDate
+                },
+                success: function (data) {
+                    $('#report').html(data);
+                    $('#loading').hide();
+                },
+                error: function () {
+                    $('#report').html("<h5>Sorry, there was an error fetching the report. Please contact support.</h5>");
+                    $('#loading').hide();
+                }
+            }).done(GetDateLastModified());
+        }
+
+        //load report on startup
+        LoadReport(
+            $('#user').val(),
+        (($('#year').val() + $('#month').val()) * 100 + 1),
+        (($('#year').val() + $('#month').val()) * 100 + 101)
+    );
+
+        //load report on <select> change
+        $('select').change(function () {
+            var monthVal = $('#month').val();
+            var yearVal = $('#year').val();
+            var fromDate = (yearVal + monthVal) * 100 + 1;
+            var toDate = fromDate + 100;
+            LoadReport($('#user').val(), fromDate, toDate);
+        });
+
+        $('select').trigger('change');
+
+        $("#export").click(function (e) {
+            //remove table styling for excel export
+            $('#report > table').removeClass('table table-bordered table-condensed');
+            $('#report > table').removeAttr('class');
+
+            $(this).attr('download', 'ExportToExcel.xls').attr('target', '_blank');
+            var report = $('#report').html();
+            window.open('data:application/vnd.ms-excel,' + $('#report').html());
+
+            //restore table styling after excel export
+            $('#report > table').addClass('table table-bordered table-condensed');
+            e.preventDefault();
+        });
+    });
+</script>

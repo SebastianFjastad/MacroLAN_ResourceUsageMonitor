@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0c59dd66b1d8470fbfc329d37f3ce7fb" Name="Diagram1">
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.CloudContainsVirtualMachineFact" Width="1.5" PointX="15" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.CloudDim" Width="1.5" PointX="6.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.DateDim" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostClusterContainsVMHostFact" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostClusterDim" Width="1.5" PointX="0.75" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostContainsVirtualMachineFact" Width="1.5" PointX="6" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostDim" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostGroupContainsHostClusterFact" Width="1.5" PointX="12" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostGroupContainsHostGroupFact" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostGroupContainsVMHostFact" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostGroupDim" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostHostsHostVolumeFact" Width="1.5" PointX="3" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostHostsVMHostDiskFact" Width="1.5" PointX="6" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HostVolumeDim" Width="1.5" PointX="0.75" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.HourDim" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.ObjectStore" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.OperatingSystemDim" Width="1.5" PointX="3.75" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.PlanDim" Width="1.5" PointX="6.75" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.ProcessorCategoryDim" Width="1.5" PointX="3.75" PointY="44.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.SubscriptionCapacityMonthlyFact" Width="1.5" PointX="12" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.SubscriptionDim" Width="1.5" PointX="6.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.sysdiagram" Width="1.5" PointX="8.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.TenantDim" Width="1.5" PointX="6.75" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.UserRoleContainsQuotaFact" Width="1.5" PointX="9" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.UserRoleDim" Width="1.5" PointX="6.75" PointY="43.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.UserRoleQuotaDim" Width="1.5" PointX="6.75" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.UserRoleReferencesCloudFact" Width="1.5" PointX="9" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.UserRoleReferencesVMNetworkFact" Width="1.5" PointX="12" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualDiskDim" Width="1.5" PointX="6.75" PointY="58.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualMachineBaseUsageMonthlyFact" Width="1.5" PointX="9" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualMachineContainsVirtualDiskFact" Width="1.5" PointX="9" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualMachineContainsVirtualNicFact" Width="1.5" PointX="12" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualMachineDim" Width="1.5" PointX="3.75" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualNicDim" Width="1.5" PointX="9.75" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMHostDiskDim" Width="1.5" PointX="3.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMInventoryMonthlyFact" Width="1.5" PointX="6" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMMServerDim" Width="1.5" PointX="6.75" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMNetworkDim" Width="1.5" PointX="9.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMNetworkGatewayDim" Width="1.5" PointX="9.75" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMNetworkGatewayUsageMonthlyFact" Width="1.5" PointX="12" PointY="19.625" IsExpanded="true" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_CloudContainsVirtualMachineFact_CloudDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_CloudContainsVirtualMachineFact_VirtualMachineDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityMonthlyFact_CloudDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_UserRoleReferencesCloudFact_CloudDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_CloudDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_CloudDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityMonthlyFact_DateKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_DateKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMInventoryMonthlyFact_DateKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_DateKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostClusterContainsVMHostFact_HostClusterDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostClusterContainsVMHostFact_HostDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostGroupContainsHostClusterFact_HostClusterDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostContainsVirtualMachineFact_HostDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostContainsVirtualMachineFact_VirtualMachineDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostGroupContainsVMHostFact_HostDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostHostsHostVolumeFact_HostDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostHostsVMHostDiskFact_HostDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_HostDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMInventoryMonthlyFact_HostDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostGroupContainsHostClusterFact_HostGroupDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostGroupContainsHostGroupFact_HostGroupDimKey_Src" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostGroupContainsHostGroupFact_HostGroupDimKey_Tgt" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostGroupContainsVMHostFact_HostGroupDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_HostGroupDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostHostsHostVolumeFact_HostVolumeDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_HostHostsVMHostDiskFact_VMHostDiskDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMInventoryMonthlyFact_OperatingSystemDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityMonthlyFact_PlanDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_PlanDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_PlanDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMInventoryMonthlyFact_ProcessorCateogryDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityMonthlyFact_SubscriptionDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityMonthlyFact_TenantDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityMonthlyFact_UserRoleDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityMonthlyFact_VMMServerDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_SubscriptionDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_SubscriptionDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_TenantDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_TenantDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_UserRoleContainsQuotaFact_UserRoleDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_UserRoleContainsQuotaFact_UserRoleQuotaDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_UserRoleReferencesCloudFact_UserRoleDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_UserRoleReferencesVMNetworkFact_UserRoleDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_UserRoleDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_UserRoleDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_UserRoleReferencesVMNetworkFact_VMNetworkDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineContainsVirtualDiskFact_VirtualDiskDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_VirtualMachineDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageMonthlyFact_VMMServerDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineContainsVirtualDiskFact_VirtualMachineDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineContainsVirtualNicFact_VirtualMachineDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineContainsVirtualNicFact_VirtualNicDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMInventoryMonthlyFact_VirtualMachineDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_VMMServerDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_VMNetworkDimKey" ManuallyRouted="false" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageMonthlyFact_VMNetworkGatewayDimKey" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualMachineBaseUsageHourlyFact" Width="1.5" PointX="15" PointY="27.375" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_HostDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_HostGroupDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_HourKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_VirtualMachineDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFact_VMMServerDimKey" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.SubscriptionCapacityDailyFact" Width="1.5" PointX="18" PointY="32.25" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.SubscriptionCapacityDailyFactStaging" Width="1.5" PointX="15" PointY="37.25" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.SubscriptionCapacityHourlyFact" Width="1.5" PointX="15" PointY="14" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.SubscriptionCapacityHourlyFactStaging" Width="1.5" PointX="18" PointY="16" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualMachineBaseUsageDailyFact" Width="1.5" PointX="24" PointY="32.875" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualMachineBaseUsageDailyFactStaging" Width="1.5" PointX="21" PointY="34.875" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VirtualMachineBaseUsageHourlyFactStaging" Width="1.5" PointX="24" PointY="23.5" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMNetworkGatewayUsageDailyFact" Width="1.5" PointX="21" PointY="27.75" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMNetworkGatewayUsageDailyFactStaging" Width="1.5" PointX="21" PointY="13.75" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMNetworkGatewayUsageHourlyFact" Width="1.5" PointX="21" PointY="20.5" />
+        <EntityTypeShape EntityType="UsageDataWarehouseDBModel.VMNetworkGatewayUsageHourlyFactStaging" Width="1.5" PointX="18" PointY="24.5" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFact_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFactStaging_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFact_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFactStaging_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_CloudDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFact_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFactStaging_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFact_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFactStaging_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_DateKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_HostDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_HostDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_HostDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_HostGroupDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_HostGroupDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_HostGroupDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFact_HourKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFactStaging_HourKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_HourKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_HourKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_HourKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFact_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFactStaging_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFact_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFactStaging_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_PlanDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFact_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFact_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFact_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFact_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFactStaging_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFactStaging_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFactStaging_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityDailyFactStaging_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFact_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFact_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFact_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFact_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFactStaging_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFactStaging_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFactStaging_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_SubscriptionCapacityHourlyFactStaging_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_SubscriptionDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_TenantDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_UserRoleDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_VirtualMachineDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFact_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_VirtualMachineDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageDailyFactStaging_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_VirtualMachineDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VirtualMachineBaseUsageHourlyFactStaging_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_VMMServerDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_VMNetworkDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_VMNetworkDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_VMNetworkDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_VMNetworkDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFact_VMNetworkGatewayDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageDailyFactStaging_VMNetworkGatewayDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFact_VMNetworkGatewayDimKey" />
+        <AssociationConnector Association="UsageDataWarehouseDBModel.FK_VMNetworkGatewayUsageHourlyFactStaging_VMNetworkGatewayDimKey" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

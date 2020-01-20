@@ -1,0 +1,93 @@
+﻿@using Microsoft.Ajax.Utilities
+@model MLReporting.Models.UsageViewModel
+
+
+@{
+    double cpuRate = 0.201612903;
+    double diskRate = 0.003360215;
+    double memoryRate = 0.161290323;
+
+    decimal totalCost = 0;
+}
+
+<table class="table table-bordered table-condensed">
+    <thead>
+        <tr>
+            <td colspan="14"><b>@Model.User.DisplayName</b></td>
+        </tr>
+    </thead>
+    <colgroup>
+        <col span="12"/>
+        <col style="background-color: lightgray"/>
+    </colgroup>
+    <tbody>
+        <tr>
+            <td><b>Resource</b></td>
+            <td><b>IPv4</b></td>
+            <td><b>Network</b></td>
+            <td><b>Cores</b></td>
+            <td><b>Memory<br />Usage(GB)</b></td>
+            <td><b>Diskspace<br />(GB)</b></td>
+            <td><b>Runtime<br />(Hr)</b></td>
+            <td><b>CPU<br />(Hr)</b></td>
+            <td><b>CPU<br />Cost</b></td>
+            <td><b>Memory<br />(Hr)</b></td>
+            <td><b>Memory<br />Cost</b></td>
+            <td><b>Diskspace<br />Cost</b></td>
+            <td><b>Total<br />Cost</b></td>
+        </tr>
+
+        @*-----CPU usage-----*@
+        @foreach (var vm in Model.VMs)
+        {
+            foreach (var vmUsage in Model.VMUsages.Where(u => u.VirtualMachineDimKey == vm.VirtualMachineDimKey))
+            {
+                <tr>
+                    @{
+                        var totalDiskRunTime = Math.Truncate((double) vmUsage.TotalVMRunTime);
+                        var totalRunTime = Math.Round((double) ((vmUsage.TotalVMRunTime - Math.Truncate((double) vmUsage.TotalVMRunTime))*10000.0), 1);
+                        var memUsage = decimal.Round((decimal)(vmUsage.MemoryUsage / 1024), 2, MidpointRounding.AwayFromZero);
+                        var diskAlloc = decimal.Round((decimal)(vmUsage.DiskSpaceAllocated / 1.024), 2, MidpointRounding.AwayFromZero);
+                        var totalMemRunTime = memUsage * (decimal)totalRunTime; 
+                        
+                        var vmCoreCost = decimal.Round((decimal) ((totalRunTime*vmUsage.CoreAllocated)*cpuRate), 2, MidpointRounding.AwayFromZero);
+                        var vmMemoryCost = decimal.Round((totalMemRunTime * (decimal)memoryRate), 2, MidpointRounding.AwayFromZero);
+                        var vmDiskCost = decimal.Round((decimal) ((totalDiskRunTime*(vmUsage.DiskSpaceAllocated/1.024))*diskRate), 2, MidpointRounding.AwayFromZero);
+                        var totalVMCost = vmCoreCost + vmMemoryCost + vmDiskCost;
+                        totalCost += totalVMCost;
+                    }
+
+                    <td>VM (@vm.DisplayName)</td>
+                    <td>@vmUsage.IpAddress</td>
+                    <td>@vmUsage.NetworkName</td>
+                    <td>@vmUsage.CoreAllocated</td>
+                    <td>@memUsage</td>
+                    <td>@diskAlloc</td>
+                    <td>@totalRunTime</td>
+                    <td>@(totalRunTime * vmUsage.CoreAllocated)</td>
+                    <td>@vmCoreCost</td>
+                    <td>@totalMemRunTime</td>
+                    <td>@vmMemoryCost</td>
+                    <td>@vmDiskCost</td>
+                    <td>@totalVMCost</td>
+                </tr>
+            }
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>R @totalCost</b></td>
+        </tr>
+        @{ totalCost = 0;}
+    </tbody>
+</table>

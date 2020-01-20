@@ -1,0 +1,46 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/Css")
+    @Scripts.Render("~/Scripts/JQueryBundle")
+
+</head>
+<body>
+    <div class="navbar" role="banner">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <img src="~/Images/macrolan_original_on_white.jpg" alt="Macrolan" title="Macrolan" height="100" width="300" />
+
+            </div>
+            <nav class="navbar-collapse collapse" id="navbar-collapse-1" role="navigation" style="margin-top: 43px; ">
+                <ul class="nav navbar-nav" style="font-size: 16px; font-weight: bolder">
+                    <li><a href="@Url.Action("Index", "Tenant")">Tenants</a></li>
+                </ul>
+            </nav>
+
+            @RenderBody()
+
+            <div class="col-xs-12">
+                <hr>
+                <footer>
+                    <p>&copy; Macrolan @System.DateTime.Now.ToString("yyyy")</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

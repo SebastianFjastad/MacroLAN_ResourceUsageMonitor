@@ -1,0 +1,172 @@
+﻿@using MLReporting.Models
+@model UsersViewModel
+@{
+    ViewBag.Title = "Reports";
+}
+
+@{
+    int i = 0;
+    int yearKey = DateTime.Now.Year;
+}
+
+<style>
+    .selectedRow {
+        background-color: lightgoldenrodyellow;
+    }
+</style>
+
+<div class="row" style="padding-bottom:15px;">
+    <div class="col-xs-2">
+        <span style="font-size:30px;">Tenants</span>
+    </div>
+    <div class="col-xs-2">
+        <select name="month" class="form-control" id="monthExport" size="1">
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+    </div>
+    <div class="col-xs-2">
+        <select name="month" class="form-control" id="yearExport" size="1">
+            @while (i < 4)
+            {
+                var year = yearKey - i;
+
+                <option value="@year">@year</option>
+                i++;
+            }
+        </select>
+    </div>
+    <div class="col-xs-1">
+        <input id="groupExport" type="button" class="btn btn-success" value="Export" />
+    </div>
+    <div id="multiReportLoading" class="col-xs-2" style="display:none;">
+        <img src="~/Images/ajax-loader.gif" height="16" width="16" alt="loading.." />
+    </div>
+</div>
+
+<table class="table table-condensed table-hover" id="userList">
+    <tr>
+        <th>
+            Tenant Name
+        </th>
+        <th>
+            <input id="checkAll"type="checkbox"/>
+            <label class="control-label">All</label>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Users)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayName)
+            </td>
+            <td>
+                <input type="checkbox" data-userid="@item.UserRoleDimKey" />
+            </td>
+            <td>
+                <a href="@Url.Action("UserReport", "Tenant", new { id = item.UserRoleDimKey })" class="btn btn-default">Report</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<div id="reportsResult" style="display: none;">
+    <span id="placeholder"></span>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+
+        //set the select to today's date
+        var month = "0" + (new Date().getMonth() + 1);
+        $('#monthExport').val(month);
+
+        $('#checkAll').click(function(e) {
+            var table = $(e.target).closest('table');
+            $('td input:checkbox', table).prop('checked', this.checked);
+        });
+
+        var ExportToExcel = function (e) {
+            //remove table styling for excel export
+            $('#reportsResult > table').removeClass('table table-bordered table-condensed');
+            $('#reportsResult > table').removeAttr('class');
+
+            $(this).attr('reports', 'ExportToExcel.xls').attr('target', '_blank');
+            var report = $('#reportsResult').html();
+            window.open('data:application/vnd.ms-excel,' + $('#reportsResult').html());
+            $('.exportPrepareSection').addClass('invisible');
+            $('#reportsResult').contents(':not(span)').remove();
+            $('#multiReportLoading').hide();
+        }
+
+        var CompleteExport = function (ids) {
+
+            //reportResultCount makes sure all the requests have returned, then export
+            var reportResultCount = 0;
+            var LoadReport = function (id, fromDate, toDate) {
+                $.ajax({
+                    url: '@Url.Action("Report", "Tenant")',
+                    type: 'Get',
+                    data: {
+                        id: id,
+                        fromDate: fromDate,
+                        toDate: toDate
+                    },
+                    success: function (data) {
+                        $('#reportsResult > span').after(data);
+                        reportResultCount += 1;
+                        if (reportResultCount >= ids.length) {
+                            ExportToExcel();
+                        }
+                    },
+                    error: function () {
+                        $('#report').html("<h5>Sorry, there was an error fetching the reports. Please contact support.</h5>");
+                    }
+                });
+            }
+
+            var month = (($('#yearExport').val() + $('#monthExport').val()) * 100 + 1);
+            var year = (($('#yearExport').val() + $('#monthExport').val()) * 100 + 101);
+
+            for (i = 0; i < ids.length; i++) {
+
+                LoadReport(
+                    ids[i],
+                    month,
+                    year);
+            };
+            
+            $('#multiReportLoading').hide();
+        }
+
+        $('#groupExport').click(function () {
+            $('#multiReportLoading').show();
+
+            //gather checked ids to list
+            var ids = $('input:checkbox:checked').map(function (i, v) {
+                return $(v).data('userid');
+            }).get();
+
+            //if there are ids then try export
+            if (ids.length > 0) {
+                CompleteExport(ids);
+            } else {
+                alert("No tenants selected.");
+                $('#multiReportLoading').hide();
+            }
+        });
+    });
+</script>
